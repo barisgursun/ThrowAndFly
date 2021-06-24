@@ -7,6 +7,9 @@ public class stickKontrol : MonoBehaviour
     private karakterKontrol tophareketlimi;
     public Animator cubukKontrol;
     private Vector3 top;
+    Rigidbody topfizik;
+   // Transform egikmi;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +17,9 @@ public class stickKontrol : MonoBehaviour
         tophareketlimi = GameObject.FindWithTag("ball").GetComponent<karakterKontrol>();
         cubukKontrol = GetComponent<Animator>();
         top = tophareketlimi.gameObject.transform.position;
+        topfizik = tophareketlimi.GetComponent<Rigidbody>();
+       // egikmi = GameObject.FindWithTag("egik").GetComponent<Transform>();
+        
 
     }
 
@@ -26,6 +32,8 @@ public class stickKontrol : MonoBehaviour
             Touch dokunus = Input.GetTouch(0);
             if ((dokunus.phase == TouchPhase.Stationary) || (dokunus.phase == TouchPhase.Moved))
             {
+               // tophareketlimi.GetComponent < Transform >().rotation = egikmi.rotation;
+                topfizik.useGravity = false;
                 cubukKontrol.SetBool("cekmeyeBasla", true);
                 cubukKontrol.SetBool("cekmeyiBirak", false);
             }
