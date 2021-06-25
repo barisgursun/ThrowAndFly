@@ -10,33 +10,39 @@ public class shot : MonoBehaviour
     public float flypower = 10f;
     public float downpower = 5f;
     public float uppower = 10f;
-    float birkere = 1;
-    // Start is called before the first frame update
+    float count = 1;
+
     void Start()
     {
         topfizik = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (Input.touchCount > 0)
         {
 
             Touch dokunus = Input.GetTouch(0);
-            if ((dokunus.phase == TouchPhase.Ended) && (birkere == 1))
+            if ((dokunus.phase == TouchPhase.Ended) && (count == 1))
             {
 
                 topfizik.useGravity = true;
                 tops.velocity = (transform.forward * shootpower) + (transform.up * uppower);
-                birkere += 1;
+
+
+                count = 2;
             }
-            else if ( ( (dokunus.phase == TouchPhase.Stationary) || (dokunus.phase == TouchPhase.Moved)) && (birkere == 2))
+
+            else if (((dokunus.phase == TouchPhase.Stationary) || (dokunus.phase == TouchPhase.Moved)) && (count >= 2))
             {
+
                 topfizik.useGravity = true;
                 tops.velocity = (transform.forward * flypower) + Physics.gravity.normalized;
+                count += 1;
             }
 
         }
+
     }
 }
