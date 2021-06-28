@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogColor: {r: 0.8679245, g: 0.10234957, b: 0.10234957, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -279,7 +279,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -524,8 +524,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014191547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.97, y: -5, z: 51.774}
-  m_LocalScale: {x: 7.75762, y: 1, z: 10.645001}
+  m_LocalPosition: {x: 1.65, y: -5, z: 12.36}
+  m_LocalScale: {x: 7.336634, y: 1, z: 2.7614076}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1768,7 +1768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tops: {fileID: 8296172667438964484}
-  shootpower: 35
+  shootpower: 20
   flypower: 10
   downpower: 5
   uppower: 10

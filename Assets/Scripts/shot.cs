@@ -10,7 +10,10 @@ public class shot : MonoBehaviour
     public float flypower = 10f;
     public float downpower = 5f;
     public float uppower = 10f;
+    float donushizi = 2f;
     float count = 1;
+    bool sag, sol;
+    // -7 ve 10 sag sol
 
     void Start()
     {
@@ -40,6 +43,26 @@ public class shot : MonoBehaviour
                 topfizik.useGravity = true;
                 tops.velocity = (transform.forward * flypower) + Physics.gravity.normalized;
                 count += 1;
+                if( dokunus.deltaPosition.x >100f)
+                {
+                    sag = true;
+                    sol = false;
+                }
+                if( dokunus.deltaPosition.x < -100f)
+                {
+                    sag = false;
+                    sol = true;
+                }
+                if ( sag== true)
+                {
+                    transform.position = Vector3.Lerp(transform.position, new Vector3(12f,  transform.position.y, transform.position.z),donushizi *Time.deltaTime  );
+                }
+                if ( sol == true)
+                {
+                  transform.position = Vector3.Lerp(transform.position, new Vector3(-12f, transform.position.y, transform.position.z), donushizi * Time.deltaTime);
+                }
+
+
             }
 
         }
