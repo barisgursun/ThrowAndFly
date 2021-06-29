@@ -7,6 +7,8 @@ TagManager:
   - ball
   - stick
   - egik
+  - kup
+  - silindir
   layers:
   - Default
   - TransparentFX
