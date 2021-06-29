@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4373481711367569573}
   - component: {fileID: 4373481711367569572}
   - component: {fileID: 4373481711367569575}
+  - component: {fileID: 1238145972720419557}
   m_Layer: 0
   m_Name: silindir2
   m_TagString: silindir
@@ -108,3 +109,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8676202, y: 0.09937501, z: 0.8908043}
   m_Center: {x: 0.015397191, y: 1.006771, z: -0.0041880608}
+--- !u!114 &1238145972720419557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4373481711367569574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009a80b3b1017d84cb5a5de6a9436758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

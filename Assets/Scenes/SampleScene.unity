@@ -695,6 +695,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f13f65031518820438074a8b2f00f549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kup1: {fileID: 2128213289618805386, guid: a59a9e73ef2d58847a000eac0dc38a9f, type: 3}
+  kup2: {fileID: 4709263877417900916, guid: a6aa39ab3e2acaa40bac3a76aba1ca0b, type: 3}
+  kup3: {fileID: 6434795230320491328, guid: 14984537661489d458c0bc5a2f321c36, type: 3}
+  silindir1: {fileID: 4745731777190152222, guid: f9e9b5a340a47e043968b04c81701624,
+    type: 3}
+  silindir2: {fileID: 4373481711367569574, guid: 88f872d38667c2d48950a22430c7cc0f,
+    type: 3}
+  silindir3: {fileID: 402613544463763769, guid: c87be236471f30a4e95c4022b1eb13ce,
+    type: 3}
 --- !u!1 &17987214817680460
 GameObject:
   m_ObjectHideFlags: 0
