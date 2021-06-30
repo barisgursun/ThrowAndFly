@@ -33,6 +33,7 @@ public class karakterKontrol : MonoBehaviour
         }
     }
 
+
     // Update is called once per frame
     void Update()
     {

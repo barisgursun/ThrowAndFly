@@ -21,6 +21,21 @@ public class shot : MonoBehaviour
     }
 
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "kup")
+        {
+            topfizik.useGravity = true;
+            tops.velocity = (transform.forward * shootpower) + (transform.up * uppower *5);
+        }
+
+        if (collision.gameObject.tag == "silindir")
+        {
+            topfizik.useGravity = true;
+            tops.velocity = (transform.forward * shootpower) + (transform.up * uppower * 10);
+        }
+    }
+
     void Update()
     {
         if (Input.touchCount > 0)
