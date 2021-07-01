@@ -15,6 +15,8 @@ public class shot : MonoBehaviour
     bool sag, sol;
     // -7 ve 10 sag sol
 
+    public GameObject gameOverPnl;
+
     void Start()
     {
         topfizik = GetComponent<Rigidbody>();
@@ -26,18 +28,40 @@ public class shot : MonoBehaviour
         if (collision.gameObject.tag == "kup")
         {
             topfizik.useGravity = true;
+          //  tops.velocity = (transform.up * uppower * 2f);
+          topfizik.constraints = RigidbodyConstraints.FreezePositionX;
+          
             tops.velocity = (transform.forward * shootpower) + (transform.up * uppower *5);
+
         }
+    
 
         if (collision.gameObject.tag == "silindir")
         {
             topfizik.useGravity = true;
+            topfizik.constraints = RigidbodyConstraints.FreezePositionX;
+
             tops.velocity = (transform.forward * shootpower) + (transform.up * uppower * 10);
         }
+        if(collision.gameObject.tag !="kup" || collision.gameObject.tag !="silindir")
+        {
+            topfizik.constraints &= ~RigidbodyConstraints.FreezePositionX;
+        }
+
+        if(collision.gameObject.tag == "yol")
+        {
+            gameOverPnl.SetActive(true);
+            Time.timeScale = 0.0f;
+        }
+        
+          
     }
 
     void Update()
     {
+       
+
+
         if (Input.touchCount > 0)
         {
 

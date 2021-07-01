@@ -9,6 +9,7 @@ TagManager:
   - egik
   - kup
   - silindir
+  - yol
   layers:
   - Default
   - TransparentFX

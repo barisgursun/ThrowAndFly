@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class yonetici : MonoBehaviour
 {
@@ -10,11 +11,14 @@ public class yonetici : MonoBehaviour
     public GameObject silindir1;
     public GameObject silindir2;
     public GameObject silindir3;
+    
 
     List<GameObject> kupler;
     List<GameObject> silindirler;
 
     Transform top;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -212,19 +216,19 @@ public class yonetici : MonoBehaviour
                     }
                     if (rastgele4 == 1)
                     {
-                       silindir.transform.position = new Vector3(-5f, -3f, top.position.z + 40f);
+                        silindir.transform.position = new Vector3(-5f, -3f, top.position.z + 40f);
                     }
                     if (rastgele4 == 2)
                     {
-                       silindir.transform.position = new Vector3(-20f, -3f, top.position.z + 50f);
+                        silindir.transform.position = new Vector3(-20f, -3f, top.position.z + 50f);
                     }
                     if (rastgele4 == 3)
                     {
-                       silindir.transform.position = new Vector3(-15f, -3f, top.position.z + 60f);
+                        silindir.transform.position = new Vector3(-15f, -3f, top.position.z + 60f);
                     }
                     if (rastgele4 == 4)
                     {
-                       silindir.transform.position = new Vector3(0f, -3f, top.position.z + 70f);
+                        silindir.transform.position = new Vector3(0f, -3f, top.position.z + 70f);
                     }
                     if (rastgele4 == 5)
                     {
@@ -266,5 +270,16 @@ public class yonetici : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void replayA()
+    {
+        SceneManager.LoadScene("Scenes/game");
+        Time.timeScale = 1.0f;
+    }
+
+    public void exitG()
+    {
+        Application.Quit();
     }
 }
