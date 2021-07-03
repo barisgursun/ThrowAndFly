@@ -9,8 +9,11 @@ public class karakterKontrol : MonoBehaviour
     Rigidbody topfizik;
     Vector3 rotatetop = new Vector3(0f, 0f, 1000f);
     Vector3 toprot = new Vector3(90f, 0f, 0f);
+    Vector3 basiliyken = new Vector3(45.0f, 0f, 0.0f);
     Transform yol1;
     Transform yol2;
+
+   
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +51,17 @@ public class karakterKontrol : MonoBehaviour
                 topfizik.useGravity = true;
                 kontrol.SetBool("kanadiAcmayaBasla", true);
                 kontrol.SetBool("kanadiKapamayaBasla", false);
+                //   GameObject.FindGameObjectWithTag("ball").GetComponent<Transform>().transform.rotation =   Quaternion.Euler (45f, transform.rotation.y, 0f);
+                //   topfizik.rotation = Quaternion.Euler(45f, transform.rotation.y, 0f);
+                //   GameObject.FindGameObjectWithTag("ball").transform.Translate(Vector3.forward * 50 * Time.deltaTime);
+                //  topfizik.velocity = (transform.forward * 10f) + Physics.gravity.normalized;
+                //  go.transform.position = new Vector3(x, y, z);
+                //  x = transform.localEulerAngles.x;
+              //  Quaternion toRot = Quaternion.LookRotation(gameObject.transform.position, Vector3.up);
+               // transform.rotation = Quaternion.RotateTowards(transform.rotation, toRot, 3f * Time.deltaTime);
+
+                //  topfizik.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+
 
             }
 
@@ -63,6 +77,8 @@ public class karakterKontrol : MonoBehaviour
         }
         else if ((Input.touchCount == 0) && (topkonum != gameObject.transform.position))
         {
+
+    
             transform.Rotate(rotatetop * Time.deltaTime);
         }
 

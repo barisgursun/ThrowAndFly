@@ -13,6 +13,8 @@ public class shot : MonoBehaviour
     float donushizi = 2f;
     float count = 1;
     bool sag, sol;
+
+    Vector3 rottop = new Vector3(45f,5f, 0f);
     // -7 ve 10 sag sol
 
     public GameObject gameOverPnl;
@@ -31,7 +33,7 @@ public class shot : MonoBehaviour
           //  tops.velocity = (transform.up * uppower * 2f);
           topfizik.constraints = RigidbodyConstraints.FreezePositionX;
           
-            tops.velocity = (transform.forward * shootpower) + (transform.up * uppower *5);
+            tops.velocity = (transform.forward * shootpower/5) + (transform.up * uppower *2);
 
         }
     
@@ -41,12 +43,14 @@ public class shot : MonoBehaviour
             topfizik.useGravity = true;
             topfizik.constraints = RigidbodyConstraints.FreezePositionX;
 
-            tops.velocity = (transform.forward * shootpower) + (transform.up * uppower * 10);
+            tops.velocity = (transform.forward * shootpower/5) + (transform.up * uppower * 4);
         }
-        if(collision.gameObject.tag !="kup" || collision.gameObject.tag !="silindir")
+
+       if(collision.gameObject.tag !="kup" || collision.gameObject.tag !="silindir")
         {
             topfizik.constraints &= ~RigidbodyConstraints.FreezePositionX;
         }
+
 
         if(collision.gameObject.tag == "yol")
         {
@@ -70,7 +74,8 @@ public class shot : MonoBehaviour
             {
 
                 topfizik.useGravity = true;
-                tops.velocity = (transform.forward * shootpower) + (transform.up * uppower);
+                tops.velocity = (transform.forward * shootpower ) + (transform.up * uppower );
+               
 
 
                 count = 2;
@@ -81,7 +86,12 @@ public class shot : MonoBehaviour
 
                 topfizik.useGravity = true;
                 tops.velocity = (transform.forward * flypower) + Physics.gravity.normalized;
+              //  Quaternion rots = Quaternion.Euler(rottop);
+              //  tops.transform.rotation = rots;
+              //  GameObject.FindGameObjectWithTag("ball").GetComponent<Transform>().transform.rotation = Quaternion.Euler(45f, transform.rotation.y, 0f);
+               // GameObject.FindGameObjectWithTag("ball").GetComponent<Transform>().transform.position = transform.position;
                 count += 1;
+                
                 if( dokunus.deltaPosition.x >100f)
                 {
                     sag = true;
@@ -94,12 +104,13 @@ public class shot : MonoBehaviour
                 }
                 if ( sag== true)
                 {
-                    transform.position = Vector3.Lerp(transform.position, new Vector3(12f,  transform.position.y, transform.position.z),donushizi *Time.deltaTime  );
+                    transform.position = Vector3.Lerp(transform.position, new Vector3(20f,  transform.position.y, transform.position.z),donushizi *Time.deltaTime  );
                 }
                 if ( sol == true)
                 {
-                  transform.position = Vector3.Lerp(transform.position, new Vector3(-12f, transform.position.y, transform.position.z), donushizi * Time.deltaTime);
+                  transform.position = Vector3.Lerp(transform.position, new Vector3(-20f, transform.position.y, transform.position.z), donushizi * Time.deltaTime);
                 }
+                
 
 
             }
